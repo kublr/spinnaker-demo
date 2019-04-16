@@ -1,0 +1,15 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: sp-demo-virtual-service
+spec:
+  hosts:
+    - "*"
+  gateways:
+    - sp-demo-gateway
+  http:
+    - route:
+        - destination:
+            host: sp-demo-api.stg.svc.cluster.local
+            subset: v1

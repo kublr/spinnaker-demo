@@ -1,0 +1,61 @@
+apiVersion: v1
+entries:
+  istio:
+  - apiVersion: v1
+    appVersion: 1.1.0
+    created: 2019-04-02T18:16:15.896827796Z
+    description: Helm chart for all istio components
+    digest: b366dfca68c15c484ce9b7ead862e1b65ac178f1d4509d339b7119a2d44ac33a
+    engine: gotpl
+    icon: https://istio.io/favicons/android-192x192.png
+    keywords:
+    - istio
+    - security
+    - sidecarInjectorWebhook
+    - mixer
+    - pilot
+    - galley
+    name: istio
+    sources:
+    - http://github.com/istio/istio
+    tillerVersion: '>=2.7.2-0'
+    urls:
+    - istio-1.1.0.tgz
+    version: 1.1.0
+  istio-cni:
+  - apiVersion: v1
+    appVersion: 0.1.0
+    created: 2019-04-02T18:16:15.897166997Z
+    description: Helm chart for istio-cni components
+    digest: 815b02fcc29d992d53b440455184be91c7181ce00060414f750ad41a6016d6e6
+    engine: gotpl
+    icon: https://istio.io/favicons/android-192x192.png
+    keywords:
+    - istio-cni
+    - istio
+    name: istio-cni
+    sources:
+    - http://github.com/istio/cni
+    tillerVersion: '>=2.7.2-0'
+    urls:
+    - istio-cni-0.1.0.tgz
+    version: 0.1.0
+  istio-init:
+  - apiVersion: v1
+    appVersion: 1.1.0
+    created: 2019-04-02T18:16:15.897783188Z
+    description: Helm chart to initialize Istio CRDs
+    digest: 94148e22854e5c587bc8494dba5d5dec269e5a270d88de025bd2197850c3f099
+    engine: gotpl
+    icon: https://istio.io/favicons/android-192x192.png
+    keywords:
+    - istio
+    - crd
+    name: istio-init
+    sources:
+    - http://github.com/istio/istio
+    tillerVersion: '>=2.7.2-0'
+    urls:
+    - istio-init-1.1.0.tgz
+    version: 1.1.0
+generated: 2019-04-02T18:16:15.890023254Z

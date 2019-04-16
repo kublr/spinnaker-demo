@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sp-demo-api
+  namespace: prod
+  labels:
+    app: sp-demo-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sp-demo-api
+  template:
+    metadata:
+      labels:
+        app: sp-demo-api
+    spec:
+      containers:
+        - name: api
+          image: index.docker.io/alex202/sp-demo-api
+          ports:
+            - containerPort: 8020
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  namespace: prod
+  name: sp-demo-api
+spec:
+  selector:
+    app: sp-demo-api
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8020

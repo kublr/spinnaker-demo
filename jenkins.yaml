@@ -1,0 +1,31 @@
+Agent:
+  Enabled: true
+  Image: alex202/jnlp-slave
+  ImageTag: 1.0
+
+Persistence:
+  Enabled: true
+  Size: 5Gi
+
+
+Master:
+  AdminPassword: admin123 # if commented, addmin password will be created in secrets
+  JenkinsAdminEmail: jenkins@kublr.com
+  ImageTag: lts-alpine
+  SlaveKubernetesNamespace: default
+  HostName: jenkins.sp-demo.egorov.net # set the right hostname
+  Ingress:
+    Annotations:
+      ingress.kubernetes.io/ssl-redirect: true
+  ServiceType: ClusterIP
+  InstallPlugins:
+    - kubernetes:1.14.8
+    - workflow-job:2.31
+    - workflow-aggregator:2.6
+    - credentials-binding:1.18
+    - git:3.9.3
+    - oic-auth:1.6
+    - timestamper:1.9
+    - periodicbackup:1.5        # optional, if you want to make periodic backups
+    - job-import-plugin:3.1     # optional, if you want to import jobs from old jenkins
+    - role-strategy:2.10

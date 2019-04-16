@@ -1,0 +1,70 @@
+dockerRegistries:
+- address: index.docker.io
+  name: dockerhub
+  repositories:
+  - library/alpine
+  - library/ubuntu
+  - library/centos
+  - library/nginx
+  - kublr/spin-kub-v2-demo
+gcs:
+  bucket: <GCS-BUCKET-NAME>
+  enabled: false
+  jsonKey: <INSERT CLOUD STORAGE JSON HERE>
+  project: my-project-name
+halyard:
+  additionalConfig:
+    configMapKey: config.sh
+    configMapName: my-halyard-config
+    enabled: false
+  image:
+    repository: gcr.io/spinnaker-marketplace/halyard
+    tag: 1.13.0
+  spinnakerVersion: 1.11.2
+ingress:
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/tls-acme: "true"
+  enabled: true
+  host: s.sp.kublr-demo.com
+  tls:
+  - hosts:
+    - s.sp.kublr-demo.com
+    secretName: spinnaker-tls
+kubeConfig:
+  contexts:
+  - default
+  deploymentContext: default
+  enabled: false
+  secretKey: config
+  secretName: my-kubeconfig
+minio:
+  accessKey: spinnakeradmin
+  bucket: spinnaker
+  enabled: true
+  imageTag: RELEASE.2018-06-09T02-18-09Z
+  nodeSelector: {}
+  secretKey: spinnakeradmin
+  serviceType: ClusterIP
+nodeSelector: {}
+rbac:
+  create: true
+redis:
+  cluster:
+    enabled: false
+  nodeSelector: {}
+  password: password
+s3:
+  bucket: <S3-BUCKET-NAME>
+  enabled: false
+serviceAccount:
+  create: true
+  halyardName: null
+  spinnakerName: null
+spinnakerFeatureFlags:
+- artifacts
+- infrastructure-stages
+- jobs
+- mine-canary
+- pipeline-templates
+

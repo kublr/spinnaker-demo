@@ -1,0 +1,32 @@
+dockerRegistries:
+- address: index.docker.io
+  name: dockerhub
+  repositories:
+  - alex202/sp-demo-api
+  - alex202/sp-demo-web
+
+ingress:
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/tls-acme: "true"
+  enabled: true
+  host: spinnaker.sp-demo.kublr.com
+  tls:
+  - hosts:
+    - spinnaker.sp-demo.kublr.com
+    secretName: spinnaker-tls
+
+kubeConfig:
+  contexts:
+  - default
+  deploymentContext: default
+  enabled: false
+  secretKey: config
+  secretName: sp-demo-kubeconfig
+spinnakerFeatureFlags:
+- artifacts
+- infrastructure-stages
+- jobs
+- mine-canary
+- pipeline-templates
+
