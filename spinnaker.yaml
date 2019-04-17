@@ -10,11 +10,7 @@ ingress:
     ingress.kubernetes.io/ssl-redirect: "true"
     kubernetes.io/tls-acme: "true"
   enabled: true
-  host: spinnaker.sp-demo.kublr.com
-  tls:
-  - hosts:
-    - spinnaker.sp-demo.kublr.com
-    secretName: spinnaker-tls
+  host: spinnaker.sp-demo.egorov.net
 
 kubeConfig:
   contexts:
