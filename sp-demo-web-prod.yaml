@@ -22,9 +22,9 @@ spec:
             - containerPort: 8010
           env:
             - name: API_SERVICE
-              value: sp-demo-api
+              value: "sp-demo-api"
             - name: API_PORT
-              value: 80
+              value: "80"
 ---
 
 kind: Service
@@ -39,3 +39,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8010
+  type: LoadBalancer

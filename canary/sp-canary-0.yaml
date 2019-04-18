@@ -2,7 +2,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  namespace: stg
+  namespace: stage
   name: sp-demo-virtual-service
 spec:
   hosts:
@@ -12,5 +12,5 @@ spec:
   http:
     - route:
         - destination:
-            host: sp-demo-api.stg.svc.cluster.local
+            host: sp-demo-api.stage.svc.cluster.local
             subset: v1

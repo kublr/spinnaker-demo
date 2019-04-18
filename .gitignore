@@ -1,3 +1,4 @@
 demo-webserver/**
 demo-apiserver/**
 istio*
+.secrets

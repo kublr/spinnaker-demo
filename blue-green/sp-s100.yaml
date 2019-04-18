@@ -11,5 +11,5 @@ spec:
   http:
     - route:
         - destination:
-            host: sp-demo-api.stg.svc.cluster.local
+            host: sp-demo-api.stage.svc.cluster.local
             subset: v1

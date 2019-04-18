@@ -20,14 +20,14 @@ kubeConfig:
   secretKey: cluster1
   secretName: cluster1-kubeconfig
 
-halyard:
-  additionalScripts:
-    create: true
-    data:
-      enable_oauth.sh: |-
-        hal config features edit --artifacts true
-        hal config artifact github enable
-        hal config canary edit --default-metrics-store prometheus
+#halyard:
+#  additionalScripts:
+#    create: true
+#    data:
+#      enable_oauth.sh: |-
+#        hal config features edit --artifacts true
+#        hal config artifact github enable
+#        hal config canary edit --default-metrics-store prometheus
 
 
 spinnakerFeatureFlags:

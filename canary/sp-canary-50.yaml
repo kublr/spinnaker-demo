@@ -2,6 +2,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
+  namespace: stage
   name: sp-demo-virtual-service
 spec:
   hosts:
@@ -11,10 +12,10 @@ spec:
   http:
     - route:
         - destination:
-            host: sp-demo-api.stg.svc.cluster.local
+            host: spr-demo-api.stage.svc.cluster.local
             subset: v1
           weight: 50
         - destination:
-            host: sp-demo-api.prod.svc.cluster.local
-            subset: v1
+            host: sp-demo-api.stage.svc.cluster.local
+            subset: canary
           weight: 50
