@@ -7,6 +7,9 @@ kubectl create secret generic --from-file=$HOME/.kube/cluster1 cluster1-kubeconf
 helm upgrade -i spinnaker -f spinnaker.yaml --namespace spinnaker --timeout 600 stable/spinnaker
 
 
+# Github token
+kubectl create secret generic --from-file=.secrets/token 
+
 # Install istion 
 cd istio-1.1.2
 for i in install/kubernetes/helm/istio-init/files/crd*yaml; do kubectl apply -f $i; done
