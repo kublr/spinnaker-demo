@@ -1,6 +1,0 @@
-apiVersion: v1
-description: A jenkins chart for Kubernetes
-name: app-jenkins
-version: 0.2.0
-keywords:
-- jenkins
